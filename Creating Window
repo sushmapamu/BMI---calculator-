@@ -1,0 +1,2 @@
+window = tk.Tk()
+window.title("BMI Calculator")
