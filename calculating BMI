@@ -1,0 +1,21 @@
+def calculate_bmi():
+    try:
+        height = float(height_entry.get()) 
+        weight = float(weight_entry.get())
+        bmi = weight / (height * height)
+        bmi_label.config(text="Your BMI: {:.2f}".format(bmi)
+
+        if bmi < 18.5:
+            recommendation_label.config(text="Recommendation: You are underweight. Aim to gain weight.")
+            recommendation_label.config(fg="blue")
+        elif bmi >= 18.5 and bmi < 24.9:
+            recommendation_label.config(text="Recommendation: You are within the healthy weight range.")
+            recommendation_label.config(fg="green")
+        elif bmi >= 25 and bmi < 29.9:
+            recommendation_label.config(text="Recommendation: You are overweight. Aim to lose weight.")
+            recommendation_label.config(fg="orange")
+        else:
+            recommendation_label.config(text="Recommendation: You are obese. Seek medical advice.")
+            recommendation_label.config(fg="red")
+    except ValueError:
+        messagebox.showerror("Error", "Please enter valid numerical values for height and weight.")
